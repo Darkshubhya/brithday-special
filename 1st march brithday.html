@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dnyanu Bala</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        html, body {
+            display: grid;
+            height: 100%;
+            width: 100%;
+            place-items: center;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF8R9GCznRFtc1TcbVTQn33NZDC307jfvcs9R1LRU3Jcyj5kWtRX8aPIo&s");
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: cyan;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px blue, 0 0 30px blue;
+            }
+            to {
+                text-shadow: 0 0 20px #4dfcff, 0 0 30px #4dfcff, 0 0 40px #4dfcff;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            font-size: 20px;
+            padding: 15px 30px;
+            border-radius: 9px;
+            background: #64ed85;
+            box-shadow: 3px 3px 6px #296137, -3px -3px 6px #9fffd3;
+            transition: all 0.3s;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background: red;
+            border-radius: 50% 50% 50% 50%;
+            animation: floatUp 10s linear infinite;
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background: black;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        .wrapper {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            width: 250px;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .love-message {
+            font-size: 18px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <audio id="dnyanu" src="https://jennierubyjanenini.github.io/Music-K-Files/happy%20birthday%20to%20you%20female%20voice%20wishes.mp3"></audio>
+    <h1>Happy Birthday Dnyanu Pilyaa !!!</h1>
+    <button onclick="startCelebration()">2703</button>
+
+    <div class="wrapper">
+        <div class="card">
+            <img src="dnyanu12.jpg" alt="Left Side Photo" width="100%" height="auto">
+            <p class="love-message">Love You So Much Bala ❤️</p>
+        </div>
+        <div class="card">
+            <img src="dnyanu123.jpg" alt="My Photo" width="100%" height="auto">
+            <p>Wish U a very Happy and Happiest Birthday My Love Dnyanu Bala <br>Enjoy Your Special Day!!</p>
+        </div>
+        <div class="card">
+            <img src="dnyanu1.jpg" alt="Right Side Photo" width="100%" height="auto">
+            <p class="love-message">Thank You Dnyanu For Coming In My Life</p>
+        </div>
+    </div>
+
+    <script>
+        function startCelebration() {
+            document.getElementById('dnyanu').play();
+            for (let i = 0; i < 30; i++) {
+                createBalloon();
+            }
+        }
+
+        function createBalloon() {
+            let balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            document.body.appendChild(balloon);
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            setTimeout(() => {
+                balloon.remove();
+            }, 10000);
+        }
+    </script>
+</body>
+</html>
